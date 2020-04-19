@@ -35,7 +35,6 @@
         <br>
         <button type="submit" name="insert_button">Insert</button>
     </form>
-    <button type="submit" name="insert_button">Find</button>
     <p>
         <form method="post"> 
             <input type="submit" name="print_table"
