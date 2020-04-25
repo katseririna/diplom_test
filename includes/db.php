@@ -38,4 +38,38 @@
     }
     mysqli_close($conn);
 } 
- 
+
+ function seacrh($name) {
+    $conn = mysqli_connect("localhost", "root", "123456789Ira@","students");
+    $sql = "SELECT * FROM person WHERE name = '".$name."' LIMIT 1 "; # bad query\ vurnable 
+
+    #---- Save realisation 
+    #$sql = "SELECT * FROM person WHERE name = ? LIMIT 1 ";
+    #$stmt = $conn->prepare($sql); 
+    #$stmt->bind_param("i", $id);
+    #$stmt->execute();
+    #$result = $stmt->get_result();
+    # while ($row = $stmt->fetch_assoc()) {
+    #   echo "<tr>
+    #        <td>". $row['id']. "</td>
+    #        <td>". $row['name']. "</td>
+    #        <td>". $row['surname']. "</td>
+    #        <td>". $row['phone']. "</td>
+    #        </tr>";
+    #    }
+    #}
+
+    $result = mysqli_query($conn, $sql);
+    $rowlengh = mysqli_num_rows($result);
+    if ($rowlengh > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo "<tr>
+            <td>". $row['id']. "</td>
+            <td>". $row['name']. "</td>
+            <td>". $row['surname']. "</td>
+            <td>". $row['phone']. "</td>
+            </tr>";
+        }
+    }
+    mysqli_close($conn);
+}  
