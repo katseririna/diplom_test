@@ -41,7 +41,6 @@
 
  function seacrh($name) {
     $conn = mysqli_connect("localhost", "root", "123456789Ira@","students");
-    $sql = "SELECT * FROM person WHERE name = '".$name."' LIMIT 1 "; # bad query\ vurnable 
 
     #---- Save realisation 
     #$sql = "SELECT * FROM person WHERE name = ? LIMIT 1 ";
@@ -58,7 +57,7 @@
     #        </tr>";
     #    }
     #}
-
+    $sql = "SELECT * FROM person WHERE name = '".$name."' LIMIT 1 "; # bad query\ vurnable 
     $result = mysqli_query($conn, $sql);
     $rowlengh = mysqli_num_rows($result);
     if ($rowlengh > 0){
