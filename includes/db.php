@@ -45,7 +45,12 @@
     #---- Save realisation 
     #$sql = "SELECT * FROM person WHERE name = ? LIMIT 1 ";
     #$stmt = $conn->prepare($sql); 
-    #$stmt->bind_param("s", $name);
+    #if (!$stmt->bind_param("s", $name)){
+    # echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+    #   }
+    #if (!$stmt->execute()) {
+    #echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+    #                        }
     #$stmt->execute();
     #$result = $stmt->get_result();
     # while ($row = $stmt->fetch_assoc()) {
