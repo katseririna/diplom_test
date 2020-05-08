@@ -43,7 +43,7 @@
     $conn = mysqli_connect("localhost", "root", "123456789Ira@","students");
 
     #---- Save realisation 
-    #$sql = "SELECT * FROM person WHERE name = ? LIMIT 1 ";
+    #$sql = "SELECT id, name, surname, phone FROM person WHERE name = ? LIMIT 1 ";
     #$stmt = $conn->prepare($sql); 
     #if (!$stmt->bind_param("s", $name)){
     # echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
