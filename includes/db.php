@@ -53,7 +53,7 @@
     #                        }
     #$stmt->execute();
     #$result = $stmt->get_result();
-    # while ($row = $stmt->fetch_assoc()) {
+    # while ($row = $stmt->fetch_assoc($result)) {
     #   echo "<tr>
     #        <td>". $row['id']. "</td>
     #        <td>". $row['name']. "</td>
